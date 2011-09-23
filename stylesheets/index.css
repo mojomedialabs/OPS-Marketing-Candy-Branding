@@ -1,1 +1,128 @@
 @charset: "utf-8";
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #86d5ed;
+	color: #333333;
+	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+	font-size: 16px;
+	height: 100%;
+}
+
+a, a:visited {
+	color: #591f00;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #4d1b00;
+	outline: none;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #78482F;
+}
+
+#content {
+	background: #ffffff;
+	min-height: 100%;
+	margin: 0 auto;
+	padding: 0 11px;
+	width: 958px;
+}
+
+#content header {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/loginheader.png");
+	height: 134px;
+	margin: 0 auto;
+	width: 958px;
+}
+
+#logo {
+	float: left;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+#main-nav {
+	float: left;
+	padding-top: 110px;
+}
+
+#main-nav ul {
+	list-style: none;
+}
+
+#main-nav ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+#main-nav ul:first-child {
+	padding-left: 10px;
+}
+
+#main-nav ul li a {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/menuarrow.png") no-repeat scroll right center transparent;
+	padding: 5px 15px 5px 5px;
+}
+
+#main-nav ul li a:hover, #main-nav ul li a:focus {
+	background-color: rgba(240, 240, 240, 0.8);
+	text-decoration: none;
+}
+
+#main-nav ul li a:active {
+	background-color: rgba(220, 220, 220, 0.8);
+	text-decoration: none;
+}
+
+#social {
+	float: right;
+	padding-right: 30px;
+	padding-top: 25px;
+	width: 22px;
+}
+
+#social a {
+	display: block;
+	height: 22px;
+	margin-bottom: 4px;
+	width: 22px;
+}
+
+#rss {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/socialicons.png") no-repeat scroll 0 0 transparent;
+}
+
+#twitter {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/socialicons.png") no-repeat scroll -22px 0 transparent;
+}
+
+#facebook {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/socialicons.png") no-repeat scroll -88px 0 transparent;
+}
+
+#linkedin {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/socialicons.png") no-repeat scroll -66px 0 transparent;
+}
+
+#rss:hover {
+	background-position: 0 -22px;
+}
+
+#twitter:hover {
+	background-position: -22px -22px;
+}
+
+#facebook:hover {
+	background-position: -88px -22px;
+}
+
+#linkedin:hover {
+	background-position: -66px -22px;
+}
