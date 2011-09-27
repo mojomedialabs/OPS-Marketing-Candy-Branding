@@ -27,6 +27,32 @@ a:active {
 	color: #78482F;
 }
 
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+/* Begin Main Content */
+
 #content {
 	background: #ffffff;
 	min-height: 100%;
@@ -35,10 +61,14 @@ a:active {
 	width: 958px;
 }
 
-#content header {
+/* End Main Content */
+
+/* Begin Header */
+
+header {
 	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/loginheader.png");
 	height: 134px;
-	margin: 0 auto;
+	margin: 0 auto 20px auto;
 	width: 958px;
 }
 
@@ -126,3 +156,36 @@ a:active {
 #linkedin:hover {
 	background-position: -66px -22px;
 }
+
+/* End Header */
+
+/* Begin Sidebar */
+
+#sidebar {
+    float: left;
+    width: 168px;
+}
+
+/* End Sidebar */
+
+/* Begin Main */
+
+#main {
+    float: left;
+    margin-left: 20px;
+    width: 770px;
+}
+
+#main h1 {
+    text-align: center;
+}
+
+/* End Main */
+
+/* Begin Footer */
+
+footer {
+    width: 958px;
+}
+
+/* End Footer */
