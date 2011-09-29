@@ -75,6 +75,10 @@ input[type="text"], input[type="password"], select {
 	width: 140px;
 }
 
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
 /* End General Form Styles */
 
 /* Begin Main Content */
@@ -249,17 +253,71 @@ footer {
 	color: #ffffff;
 }
 
-#products tbody tr:nth-child(odd) {
-    background: #AFE1F4;
+#products {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.product {
+    float: left;
+    margin: 10px;
+    height: 430px;
+    width: 236px;
+}
+
+.product-name {
+    margin-bottom: 10px;
 }
 
 .product-thumbnail {
-    width: 85px;
+    height: 200px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .product-thumbnail img {
-    max-height: 85px;
-    max-width: 85px;
+    max-height: 200px;
+}
+
+.product-description {
+    height: 100px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.product-actions {
+    background: #afe1f4;
+    height: 30px;
+    overflow: hidden;
+}
+
+.product-checkbox {
+    float: left;
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+.product-checkbox input[type="checkbox"] {
+    height: 14px;
+    margin-left: 5px;
+    width: 14px;
+}
+
+.product-quantity {
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.product-quantity input[type="text"], .product-quantity select {
+    margin-left: 5px;
+    width: 129px;
+}
+
+.product-favorite {
+    float: left;
+    margin-left: 5px;
+    margin-top: 3px;
 }
 
 /* End Products */
