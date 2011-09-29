@@ -36,80 +36,63 @@
 	});
 </script>
 <!--search-->
-<form id="form1" method="post" name="form1">
-	<p>
-		<label for="searchvalue">Search all orders for:</label><br />
-		<input id="searchvalue" name="searchvalue" type="text" value="{searchval}" />
-	</p>
-	<p>
-		<label for="searchorder">by</label><br />
-
-		<select id="searchorder" name="searchorder">
-			<!--CART--><option value="0">Cart #</option><!--/CART-->
-			<option value="1">Order #</option>
-			<!--PO--><option value="2">PO Number</option><!--/PO-->
-			<option value="3">Artwork Name</option>
-			<option value="4">Product</option>
-
-			<option value="5">Status</option>
-			<option value="6">{CostCentreCaption}</option>
-			<option value="7">Quantity</option>
-		</select>
-	</p>
-	<p>
-		<input name="btnSubmitorder" type="submit" value="Go" />
-
-	</p>
-	<p>
-		<a href="adorders.asp?all={all}">Advanced Search</a>
-	</p>
+<form id="orders-search" method="post" name="form1">
+	<label for="searchvalue">Search all orders for:</label>
+	<input id="searchvalue" name="searchvalue" type="text" value="{searchval}" />
+	<label for="searchorder">by</label>
+	<select id="searchorder" name="searchorder">
+		<!--CART--><option value="0">Cart #</option><!--/CART-->
+		<option value="1">Order #</option>
+		<!--PO--><option value="2">PO Number</option><!--/PO-->
+		<option value="3">Artwork Name</option>
+		<option value="4">Product</option>
+		<option value="5">Status</option>
+		<option value="6">{CostCentreCaption}</option>
+		<option value="7">Quantity</option>
+	</select>
+	<input name="btnSubmitorder" type="submit" value="Go" />
+	<a href="adorders.asp?all={all}">Advanced Search</a>
 </form>
-<div id="search-results">
+<!--<div id="search-results">
 {searchresults}
-</div>
+</div>-->
 <!--/search-->
 <!--VIEWORDERS-->
 <table id="orders">
 	<thead>
-
 		<tr>
-			<th scope="col">Date</th>
-			<!--CART--><th scope="col">Cart #</th><!--/CART-->
-			<th scope="col">Item #</th>
-			<!--PO--><th scope="col">PO #</th><!--/PO-->
-			<!--OrderCost--><th scope="col">Cost</th><!--/OrderCost-->
-
-			<th scope="col">Quantity</th>
-			<th scope="col">Product Name</th>
+			<th scope="col" class="order-date">Date</th>
+			<!--CART--><th scope="col" class="order-cart-number">Cart #</th><!--/CART-->
+			<th scope="col" class="order-item-number">Item #</th>
+			<!--PO--><th scope="col" class="order-po-number">PO #</th><!--/PO-->
+			<!--OrderCost--><th scope="col" class="order-cost">Cost</th><!--/OrderCost-->
+			<th scope="col" class="order-quantity">Quantity</th>
+			<th scope="col" class="order-product-name">Product Name</th>
 			<!--ShippingInfo--><th scope="col">Shipping Info</th><!--/ShippingInfo-->
 			<!--OrderedBy--><th scope="col">Ordered By</th><!--/OrderedBy-->
-			<!--status--><th scope="col">Status</th><!--/status-->
-			<th scope="col">Preview</th>
-
+			<!--status--><th scope="col" class="order-status">Status</th><!--/status-->
+			<th scope="col" class="order-preview">Preview</th>
 		</tr>
 	</thead>
 	<tbody>
 		<!--ROW-->
 		<tr>
-			<td>{Date}</td>
-			<!--CART--><td>{CartId}</td><!--/CART-->
-			<td>{OrderNumber}</td>
-
-			<!--PO--><td>{PONumber}</td><!--/PO-->
-			<!--OrderCostData--><td>{OrderCost}</td><!--/OrderCostData-->
-			<td>{Quantity}</td>
-			<td>{TemplateName}<!--ExtraOrderFields--></td>
+			<td class="order-date">{Date}</td>
+			<!--CART--><td class="order-cart-number">{CartId}</td><!--/CART-->
+			<td class="order-item-number">{OrderNumber}</td>
+			<!--PO--><td class="order-po-number">{PONumber}</td><!--/PO-->
+			<!--OrderCostData--><td class="order-cost">{OrderCost}</td><!--/OrderCostData-->
+			<td class="order-quantity">{Quantity}</td>
+			<td class="order-product-name">{TemplateName}<!--ExtraOrderFields--></td>
 			<!--ShippingInfo--><td>{ShippingInfo}</td><!--/ShippingInfo-->
 			<!--OrderedBy--><td>{OrderedBy}</td><!--/OrderedBy-->
-
-			<!--status--><td>{Status}</td><!--/status-->
+			<!--status--><td class="order-status">{Status}</td><!--/status-->
 			<!--ViewMyOrder-->
-			<td>
+			<td class="order-preview">
 				<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="images/view.gif" />View</a>
                 <!--VPrintDownload{Order_Id}-->
 				<!--ReOrder--><br /><a href="ShowReOrder.asp?Order={Order_Id}"><img src="images/reorder.gif" />Reorder</a><!--/ReOrder-->
 				<!--Remove--><br /><a href="Orders.asp?Type={type}&remove={Order_Id}" class="delete-order"><img src="images/delete.gif" />Remove</a><!--/Remove-->
-
 				<!--Quote2Order--><br /><a href="Quotes.asp?type=createorder&id={Order_Id}" class="new-window" title="quote2order"><img src="images/reorder.gif" />Create Order</a><!--/Quote2Order-->
 				<!--QuoteDelete--><br /><a href="Quotes.asp?type=deletequote&id={Order_Id}" class="new-window" title="quotedelete"><img src="images/delete.gif" />Delete Quote</a><!--/QuoteDelete-->
 				<!--Email--><br /><a href="ResendEmail.asp?id={Order_Id}" class="new-window" title="Resend Email" data-height="480" data-width="780" data-resizable="yes"><img src="images/email.gif" />Resend Email</a><!--/Email-->
@@ -117,7 +100,6 @@
 			<!--/ViewMyOrder-->
 			<!--ViewOrder-->
 			<td>
-
 				<a href="showorder.asp?order={Order_Id}&admin=1&load=1" class="new-window" title="View Order" data-height="480" data-width="780" data-resizable="yes"><img src="images/view.gif" />View</a>
 			</td>
 			<!--/ViewOrder-->
@@ -126,7 +108,6 @@
 				<a href="ShowOrder.asp?Order={Order_Id}&admin=1&load=1"><img src="images/view.gif" />View</a>
 			</td>
 			<!--/ViewNexJobOrder-->
-
 		</tr>
 		<!--/ROW-->
 	</tbody>

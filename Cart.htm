@@ -258,7 +258,17 @@ function ApplyPromo()
 	}
 }
 </script>
+<script>
+	$(function() {
+		//sel = $("select[name|='DeliveryAddress']");
+
+		deliveryHeader = $(".bordertableheader").innerHtml();
+
+
+	});
+</script>
 <!--ORDERS-->
+<h1>Shopping Cart</h1>
 <!--Budget-->
 <div id="budget">
 	<div id="allowance">
@@ -273,24 +283,22 @@ function ApplyPromo()
 	</div>
 </div>
 <!--/Budget-->
-<form action="Checkout.asp" id="Form1" method="post" name="Form1" onsubmit="return ValidData();">
+<form action="checkout.asp" id="Form1" method="post" name="Form1" onsubmit="return ValidData();">
 	<input id="cc" name="cc" type="hidden" value="{CC}" />
 	<table id="cart">
-
 		<thead>
 			<tr>
-				<th scope="col"><input checked="true" id="checkall" name="checkall" type="checkbox" onclick="checkAll(Form1);" /></th>
-				<th scope="col">Item #</th>
-				<th scope="col">Date</th>
-				<th scope="col">Quantity</th>
-				<th scope="col">Product Name</th>
-
+				<th scope="col" class="cart-checkbox"><input checked="true" id="checkall" name="checkall" type="checkbox" onclick="checkAll(Form1);" /></th>
+				<th scope="col" class="cart-item-number">Item #</th>
+				<th scope="col" class="cart-date">Date</th>
+				<th scope="col" class="cart-quantity">Quantity</th>
+				<th scope="col" class="cart-product-name">Product Name</th>
 				<!--PromotionCode--><th scope="col">Promocode</th><!--/PromotionCode-->
 				<!--PreApproval--><th scope="col">Approver's Email</th><!--/PreApproval-->
 				<!--BudgetAllocation--><th scope="col">Allocated to Budget</th><!--/BudgetAllocation-->
-				<!--COST--><th scope="col">Cost</th><!--/COST-->
+				<!--COST--><th scope="col" class="cart-cost">Cost</th><!--/COST-->
 				<!--Delivery--><th scope="col">Delivery</th><!--/Delivery-->
-				<th scope="col">Actions</th>
+				<th scope="col" class="cart-actions">Actions</th>
 
 			</tr>
 		</thead>
@@ -300,33 +308,29 @@ function ApplyPromo()
 				<td><input checked="true" id="checkdispatchprofile" name="checkdispatchprofile" type="checkbox" onclick="checkDispatchProfile({DispatchProfile_Id});" /></td>
 				<td colspan="0">{DispatchProfileCaption}</td>
 			</tr>
-
 			<!--/DispatchProfileRow-->
 			<!--ROW-->
 			<tr>
-				<td>
+				<td class="cart-checkbox">
 					<!--CheckBox{Order_Id}-->
 					<input name="chkOrder" size="{DispatchProfile_Id}" type="checkbox" value="{Order_Id}" <!--check-->>
 					<!--/CheckBox{Order_Id}-->
 					<!--ErrorMessage{Order_Id}-->
 					<a href="#" onmouseover="showhelp('{WarningTitle{Order_Id}}', '{WarningMessage{Order_Id}}',event, true);" onmouseout="showhelp('','',event,false);"><img src="images/exclamation.gif" /></a>
-
 					<!--/ErrorMessage{Order_Id}-->
 				</td>
-				<td>{OrderNumber}</td>
-				<td>{Date}</td>
-				<td>{Quantity}</td>
-				<td>{TemplateName}<!--ExtraOrderFields--></td>
+				<td class="cart-item-number">{OrderNumber}</td>
+				<td class="cart-date">{Date}</td>
+				<td class="cart-quantity">{Quantity}</td>
+				<td class="cart-product-name">{TemplateName}<!--ExtraOrderFields--></td>
 				<!--PromotionCode--><td>{PromoCode}</td><!--/PromotionCode-->
-
 				<!--PreApproval--><td>{PreApprovalEmail}</td><!--/PreApproval-->
 				<!--BudgetAllocation--><td><input id="allocatetobudget{Order_Id}" name="allocatetobudget{Order_Id}" size="5" type="text" value="{AllocatedToBudget}"></td><!--/BudgetAllocation-->
-				<!--COST--><td>{Discount{Order_Id}} {Cost}</td><!--/COST-->
+				<!--COST--><td class="cart-cost">{Discount{Order_Id}} {Cost}</td><!--/COST-->
 				<!--Delivery--><td>{Address}</td><!--/Delivery-->
-				<td>
+				<td class="cart-actions">
 					<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="images/view.gif" /></a>
 					<a href="CartItemEdit.asp?order={Order_Id}&cc={CC}" id="hsfileattachment" onclick="return hs.htmlExpand(this, { outlineType: 'rounded-white', wrapperClassName: 'highslide-wrapper', objectType: 'iframe', preserveContent: false, width:400} )" class="highslide"><img src="images/delete.gif" /></a>
-
 				</td>
 			</tr>
 			<!--Postage-->
@@ -336,7 +340,6 @@ function ApplyPromo()
 				<td></td>
 				<td></td>
 				<td colspan="2">Postage</td>
-
 				<!--PreApproval--><td></td><!--/PreApproval-->
 				<!--BudgetAllocation--><td></td><!--/BudgetAllocation-->
 				<!--COST--><td>{Postage}</td><!--/COST-->
@@ -345,7 +348,6 @@ function ApplyPromo()
 			</tr>
 			<!--/Postage-->
 			<!--PurchaseListPrice-->
-
 			<tr>
 				<td></td>
 				<td></td>
@@ -363,7 +365,6 @@ function ApplyPromo()
 			<!--/ROW-->
 		</tbody>
 	</table>
-
 	<!--DISCOUNT-->
 	<div id="discount">
 		* Group Discount: {DiscountPrice}
@@ -373,7 +374,6 @@ function ApplyPromo()
 	<div id="freight-options">
 		<p>Freight Options</p>
 		<p>
-
 			<label for="FreightSaturday">Requires Saturday Delivery</label><br />
 			<input id="FreightSaturday"  name="FreightSaturday" type="checkbox">
 		</p>
@@ -382,7 +382,6 @@ function ApplyPromo()
 			<input id="FreightResidential"  name="FreightResidential" type="checkbox">
 		</p>
 		<p>
-
 			<label for="FreightConfirmation">Delivery Confirmation</label><br />
 			<select id="FreightConfirmation" name="FreightConfirmation">
 				<option value="1">None</option>
@@ -390,7 +389,6 @@ function ApplyPromo()
 				<option value="3">Adult Signature Required</option>
 			</select>
 		</p>
-
 	</div>
 	<!--/FreightOptions-->
 	<!--PromotionCode-->
@@ -399,27 +397,18 @@ function ApplyPromo()
 			<label for="promocode">Promotion Code:</label><br />
 			<input id="promocode" name="promocode" size="10" type="text" onblur="getPromotion(document.getElementById('promocode').value);" />
 		</p>
-
 		<p>
 			<input id="applypromotion" name="applypromotion" type="button" value="Apply" onclick="getPromotion(document.getElementById('promocode').value);"/>
 		</p>
 	</div>
 	<!--/PromotionCode-->
 	<div id="delivery">
-		<!--ModifyAddress-->
-		<!--DeliveryScreenTip-->
-		<blockquote>
-
-			{DeliveryHelpText}
-		</blockquote>
-		<!--/DeliveryScreenTip-->
 		<!--DeliveryAddresses-->
 	</div>
 	<div id="login">
 		<!--Login-->
 	</div>
 	<!--UPSFEDEX-->
-
 	<div id="upsfedex">
 		<p>Freight Method</p>
 		<!--UPSFEDEXSELECT--><!--/UPSFEDEXSELECT-->
@@ -428,7 +417,6 @@ function ApplyPromo()
 	<input id="EditInCart" name="EditInCart" type="hidden" value="{EditInCart}" />
 	<input id="AllocateBudget" name="AllocateBudget" type="hidden" value="{AllocateBudget}" />
 	<input id="btncontinueshopping" type="button" value="Continue Shopping" onclick="window.location='cIndex.asp';" />
-
 	<!--AddToCarts--><input id="btnaddtocarts" value="Add to other Carts"  type="button" onclick="javascript:AddToCarts();" /><!--/AddToCarts-->
 	<!--Checkout--><input id="btnCheckout" name="btnCheckout" type="submit" value="Checkout" {checkoutdisabled}  onclick="return CheckLiveStock();" /><!--/Checkout-->
 </form>

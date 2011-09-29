@@ -1,5 +1,7 @@
 @charset: "utf-8";
 
+@font-face { font-family: BebasNeue; src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf"); }
+
 html {
 	height: 100%;
 }
@@ -8,9 +10,11 @@ body {
 	background: #86d5ed;
 	color: #333333;
 	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	height: 100%;
 }
+
+/* Begin General Link Styles */
 
 a, a:visited {
 	color: #591f00;
@@ -26,6 +30,10 @@ a:hover, a:focus {
 a:active {
 	color: #78482F;
 }
+
+/* End General Link Styles */
+
+/* Begin General Header Styles */
 
 h1 {
     font-size: 32px;
@@ -51,12 +59,31 @@ h6 {
     font-size: 18px;
 }
 
+/* End General Header Styles */
+
+/* Begin General Form Styles */
+
+label {
+	font-family: BebasNeue, Arial, sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+input[type="text"], input[type="password"], select {
+	border: none;
+	font-size: 18px;
+	width: 140px;
+}
+
+/* End General Form Styles */
+
 /* Begin Main Content */
 
 #content {
 	background: #ffffff;
 	min-height: 100%;
 	margin: 0 auto;
+	overflow: hidden;
 	padding: 0 11px;
 	width: 958px;
 }
@@ -189,3 +216,191 @@ footer {
 }
 
 /* End Footer */
+
+/* Begin Products */
+
+#products-search {
+    background-color: #afe1f4;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#afe1f4), to(#00aedb)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #afe1f4, #00aedb); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #afe1f4, #00aedb); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #afe1f4, #00aedb); /* IE10 */
+    background-image:      -o-linear-gradient(top, #afe1f4, #00aedb); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #afe1f4, #00aedb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#afe1f4', EndColorStr='#00aedb'); /* IE6–IE9 */
+    color: #591f00;
+    padding: 7px 43px;
+    margin-bottom: 20px;
+}
+
+#products-search input[type="submit"] {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/submitbutton.png");
+	border: 0;
+	color: #591f00;
+	font-weight: bold;
+	height: 30px;
+    margin: 0 10px;
+	text-indent: -20px;
+	text-transform: uppercase;
+	width: 99px;
+}
+
+#products-search input[type="submit"]:active {
+	color: #ffffff;
+}
+
+#products tbody tr:nth-child(odd) {
+    background: #AFE1F4;
+}
+
+.product-thumbnail {
+    width: 85px;
+}
+
+.product-thumbnail img {
+    max-height: 85px;
+    max-width: 85px;
+}
+
+/* End Products */
+
+/* Begin Orders */
+
+#orders-search {
+    background-color: #afe1f4;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#afe1f4), to(#00aedb)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #afe1f4, #00aedb); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #afe1f4, #00aedb); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #afe1f4, #00aedb); /* IE10 */
+    background-image:      -o-linear-gradient(top, #afe1f4, #00aedb); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #afe1f4, #00aedb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#afe1f4', EndColorStr='#00aedb'); /* IE6–IE9 */
+    color: #591f00;
+    padding: 7px 43px;
+    margin-bottom: 20px;
+}
+
+#orders-search input[type="submit"] {
+	background: url("http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/submitbutton.png");
+	border: 0;
+	color: #591f00;
+	font-weight: bold;
+	height: 30px;
+    margin: 0 10px;
+	text-indent: -20px;
+	text-transform: uppercase;
+	width: 99px;
+}
+
+#orders-search input[type="submit"]:active {
+	color: #ffffff;
+}
+
+#orders {
+    width: 100%;
+}
+
+#orders th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+#orders tbody tr:nth-child(odd) {
+    background: #AFE1F4;
+}
+
+.order-date {
+    width: 100px;
+}
+
+.order-cart-number {
+    width: 51px;
+}
+
+.order-item-number {
+    width: 53px;
+}
+
+.order-po-number {
+    width: 39px;
+}
+
+.order-cost {
+
+}
+
+.order-quantity {
+
+}
+
+.order-product-name {
+
+}
+
+.order-status {
+
+}
+
+.order-preview {
+    width: 81px;
+}
+
+/* End Orders */
+
+/* Begin Cart */
+
+#cart {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#cart th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+#cart tbody tr:nth-child(odd) {
+    background: #AFE1F4;
+}
+
+.cart-checkbox {
+
+}
+
+.cart-item-number {
+
+}
+
+.cart-date {
+
+}
+
+.cart-quantity {
+
+}
+
+.cart-product-name {
+
+}
+
+.cart-cost {
+
+}
+
+.cart-actions {
+
+}
+
+#delivery {
+    background-color: #afe1f4;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#afe1f4), to(#00aedb)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #afe1f4, #00aedb); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #afe1f4, #00aedb); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #afe1f4, #00aedb); /* IE10 */
+    background-image:      -o-linear-gradient(top, #afe1f4, #00aedb); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #afe1f4, #00aedb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#afe1f4', EndColorStr='#00aedb'); /* IE6–IE9 */
+    color: #591f00;
+}
+
+/* End Cart */
