@@ -253,6 +253,10 @@ footer {
 	color: #ffffff;
 }
 
+.products-add-to-cart {
+    margin-bottom: 10px;
+}
+
 #products {
     margin: 10px 0;
     overflow: hidden;
@@ -261,7 +265,7 @@ footer {
 .product {
     float: left;
     margin: 10px;
-    height: 430px;
+    height: 379px;
     width: 236px;
 }
 
@@ -306,7 +310,7 @@ footer {
 .product-quantity {
     float: left;
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .product-quantity input[type="text"], .product-quantity select {
@@ -361,10 +365,11 @@ footer {
 #orders th, td {
     padding: 5px;
     text-align: left;
+    vertical-align: middle;
 }
 
 #orders tbody tr:nth-child(odd) {
-    background: #AFE1F4;
+    background: #afe1f4;
 }
 
 .order-date {
@@ -418,7 +423,7 @@ footer {
 }
 
 #cart tbody tr:nth-child(odd) {
-    background: #AFE1F4;
+    background: #afe1f4;
 }
 
 .cart-checkbox {
@@ -462,3 +467,39 @@ footer {
 }
 
 /* End Cart */
+
+/* Begin Checkout */
+
+#delivery-details {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#ordered-by, #deliver-to {
+    float: left;
+    width: 385px;
+}
+
+#checkout {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#checkout th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+#checkout tbody tr:nth-child(odd) {
+    background: #afe1f4;
+}
+
+#checkout tbody tr:last-child {
+    background: #b6c0f6;
+}
+
+#checkout-order-details {
+    margin-bottom: 20px;
+}
+
+/* End Checkout */

@@ -426,16 +426,19 @@
 </script>
 <script>
 $(function() {
-	$(".product-name a").each(function() {
-		if ($(this).text().length > 29)
-		{
-			newText = $(this).text().substr(0, 29) + "...";
+	$(".product-name").each(function() {
+		if ($(this).text().length > 42) {
+			newText = $(this).text().substr(0, 42) + "...";
 
 			$(this).text(newText);
 		}
 	});
 
 	$(".product-thumbnail a img").attr("width", "");
+
+	if ($(".product-category a").length === 0) {
+		$("#product-categories").remove();
+	}
 });
 </script>
 <!--TABTABLE-->
@@ -459,9 +462,10 @@ $(function() {
 		<div id="products">
 			<!--ProductStyle-->
 			<div id="product-{templateid}" class="product">
+				<input type="hidden" name="ProductName{templateid}" value="{templatename}" />
 				<div class="product-name">
-					<a href="javascript:openWin('ShowProduct.asp?Id={templateid}&si=' + document.getElementById('{prodid}{templateid}').value);">{templatename}</a>
-					<input type="hidden" name="ProductName{templateid}" value="{templatename}" />
+					<!--<a href="javascript:openWin('ShowProduct.asp?Id={templateid}&si=' + document.getElementById('{prodid}{templateid}').value);">{templatename}</a>-->
+					{templatename}
 				</div>
 				<div class="product-thumbnail">
 					<a href={thumb}><img src={thumb} id="thumbimg{templateid}" /></a>
