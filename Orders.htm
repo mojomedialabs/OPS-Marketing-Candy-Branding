@@ -35,7 +35,6 @@
 		});
 	});
 </script>
-<h1>Your Orders</h1>
 <!--search-->
 <form id="orders-search" method="post" name="form1">
 	<label for="searchvalue">Search all orders for:</label>
@@ -90,23 +89,23 @@
 			<!--status--><td class="order-status">{Status}</td><!--/status-->
 			<!--ViewMyOrder-->
 			<td class="order-preview">
-				<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="images/view.gif" />View</a>
+				<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="Files/BrokerBranding/mc/Include/search.png" />View</a>
                 <!--VPrintDownload{Order_Id}-->
-				<!--ReOrder--><br /><a href="ShowReOrder.asp?Order={Order_Id}"><img src="images/reorder.gif" />Reorder</a><!--/ReOrder-->
-				<!--Remove--><br /><a href="Orders.asp?Type={type}&remove={Order_Id}" class="delete-order"><img src="images/delete.gif" />Remove</a><!--/Remove-->
-				<!--Quote2Order--><br /><a href="Quotes.asp?type=createorder&id={Order_Id}" class="new-window" title="quote2order"><img src="images/reorder.gif" />Create Order</a><!--/Quote2Order-->
-				<!--QuoteDelete--><br /><a href="Quotes.asp?type=deletequote&id={Order_Id}" class="new-window" title="quotedelete"><img src="images/delete.gif" />Delete Quote</a><!--/QuoteDelete-->
-				<!--Email--><br /><a href="ResendEmail.asp?id={Order_Id}" class="new-window" title="Resend Email" data-height="480" data-width="780" data-resizable="yes"><img src="images/email.gif" />Resend Email</a><!--/Email-->
+				<!--ReOrder--><br /><a href="ShowReOrder.asp?Order={Order_Id}"><img src="Files/BrokerBranding/mc/Include/reorder.png" />Reorder</a><!--/ReOrder-->
+				<!--Remove--><br /><a href="Orders.asp?Type={type}&remove={Order_Id}" class="delete-order"><img src="Files/BrokerBranding/mc/Include/delete.png" />Remove</a><!--/Remove-->
+				<!--Quote2Order--><br /><a href="Quotes.asp?type=createorder&id={Order_Id}" class="new-window" title="quote2order"><img src="Files/BrokerBranding/mc/Include/reorder.png" />Create Order</a><!--/Quote2Order-->
+				<!--QuoteDelete--><br /><a href="Quotes.asp?type=deletequote&id={Order_Id}" class="new-window" title="quotedelete"><img src="Files/BrokerBranding/mc/Include/delete.png" />Delete Quote</a><!--/QuoteDelete-->
+				<!--Email--><br /><a href="ResendEmail.asp?id={Order_Id}" class="new-window" title="Resend Email" data-height="480" data-width="780" data-resizable="yes"><img src="Files/BrokerBranding/mc/Include/email.gif" />Resend Email</a><!--/Email-->
 			</td>
 			<!--/ViewMyOrder-->
 			<!--ViewOrder-->
 			<td>
-				<a href="showorder.asp?order={Order_Id}&admin=1&load=1" class="new-window" title="View Order" data-height="480" data-width="780" data-resizable="yes"><img src="images/view.gif" />View</a>
+				<a href="showorder.asp?order={Order_Id}&admin=1&load=1" class="new-window" title="View Order" data-height="480" data-width="780" data-resizable="yes"><img src="Files/BrokerBranding/mc/Include/search.png" />View</a>
 			</td>
 			<!--/ViewOrder-->
 			<!--ViewNexJobOrder-->
 			<td>
-				<a href="ShowOrder.asp?Order={Order_Id}&admin=1&load=1"><img src="images/view.gif" />View</a>
+				<a href="ShowOrder.asp?Order={Order_Id}&admin=1&load=1"><img src="Files/BrokerBranding/mc/Include/search.png" />View</a>
 			</td>
 			<!--/ViewNexJobOrder-->
 		</tr>

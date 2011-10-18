@@ -71,7 +71,7 @@ function ValidData()
 
 function deleteOrder(strURL)
 {
-	if (confirm("Are you sure you want to delete this order?"))
+	if (confirm("Are you sure you want to remove this order from your cart?"))
 	{
 		window.location = strURL
 	}
@@ -257,17 +257,11 @@ function ApplyPromo()
 	}
 }
 </script>
-<script>
-	$(function() {
-		//sel = $("select[name|='DeliveryAddress']");
-
-		deliveryHeader = $(".bordertableheader").innerHtml();
-
-
-	});
-</script>
+<div id="help_popup">
+	<div id="help_header"></div>
+	<div id="help_body"></div>
+</div>
 <!--ORDERS-->
-<h1>Shopping Cart</h1>
 <!--Budget-->
 <div id="budget">
 	<div id="allowance">
@@ -315,7 +309,7 @@ function ApplyPromo()
 					<input name="chkOrder" size="{DispatchProfile_Id}" type="checkbox" value="{Order_Id}" <!--check-->>
 					<!--/CheckBox{Order_Id}-->
 					<!--ErrorMessage{Order_Id}-->
-					<a href="#" onmouseover="showhelp('{WarningTitle{Order_Id}}', '{WarningMessage{Order_Id}}',event, true);" onmouseout="showhelp('','',event,false);"><img src="images/exclamation.gif" /></a>
+					<a href="#" onmouseover="showhelp('{WarningTitle{Order_Id}}', '{WarningMessage{Order_Id}}',event, true);" onmouseout="showhelp('','',event,false);"><img src="Files/BrokerBranding/mc/Include/error.png" /></a>
 					<!--/ErrorMessage{Order_Id}-->
 				</td>
 				<td class="cart-item-number">{OrderNumber}</td>
@@ -328,8 +322,8 @@ function ApplyPromo()
 				<!--COST--><td class="cart-cost">{Discount{Order_Id}} {Cost}</td><!--/COST-->
 				<!--Delivery--><td>{Address}</td><!--/Delivery-->
 				<td class="cart-actions">
-					<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="images/view.gif" /></a>
-					<a href="CartItemEdit.asp?order={Order_Id}&cc={CC}" id="hsfileattachment" onclick="return hs.htmlExpand(this, { outlineType: 'rounded-white', wrapperClassName: 'highslide-wrapper', objectType: 'iframe', preserveContent: false, width:400} )" class="highslide"><img src="images/delete.gif" /></a>
+					<a href="ShowOrder.asp?Order={Order_Id}&load=1"><img src="Files/BrokerBranding/mc/Include/search.png" alt="View/Edit Item" title="View/Edit Item" /></a>
+					<a href="CartItemEdit.asp?order={Order_Id}&cc={CC}" id="hsfileattachment" onclick="return hs.htmlExpand(this, { outlineType: 'rounded-white', wrapperClassName: 'highslide-wrapper', objectType: 'iframe', preserveContent: false, width:400} )" class="highslide"><img src="Files/BrokerBranding/mc/Include/delete.png" alt="Remove Item" title="Remove Item" /></a>
 				</td>
 			</tr>
 			<!--Postage-->
@@ -403,6 +397,10 @@ function ApplyPromo()
 	<!--/PromotionCode-->
 	<div id="delivery">
 		<!--DeliveryAddresses-->
+		<script>
+			CountryChanged();
+			CountryChangedBilling();
+		</script>
 	</div>
 	<div id="login">
 		<!--Login-->

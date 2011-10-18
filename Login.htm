@@ -7,15 +7,33 @@
 	<meta name="description" content="Marketing Candy Online Print Solitions login portal.">
 	<meta name="author" content="Mojo Media Labs">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link href="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/reset.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/login.css" media="screen" rel="stylesheet" type="text/css" />
-	<script src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/modernizr.js" type="application/javascript"></script>
+	<link href="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/reset.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/login.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/modernizr.js"></script>
+	<script src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/jquery164min.js"></script>
+	<script>
+		$(function() {
+			$("#submit1").click(function(event) {
+				if (($("#user").val() === '') && ($("#password").val() === '')) {
+					event.preventDefault();
+				}
+			});
+
+			$("#forgot-your-password").click(function(event) {
+				event.preventDefault();
+
+				var newWindow = window.open("forgottenpassword.asp", "", "width=600,height=400,toolbar=0,status=0,location=0,menubar=0,scrollbar=1,resizable=1");
+
+				newWindow.focus();
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="content">
 		<header>
 			<div id="logo">
-				<a href="http://marketing-candy.com/"><img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/logo.png" /></a>
+				<a href="http://marketing-candy.com/"><img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/logo.png" /></a>
 			</div>
 			<div id="social">
 				<a id="rss" href="http://marketing-candy.com/feed/"></a>
@@ -26,22 +44,22 @@
 		</header>
 		<ul id="call-to-action">
 			<li>
-				<a href="http://marketing-candy.com/search-promo-products"><img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/searchpromoproductsbutton.png" /></a>
+				<a href="http://marketing-candy.com/search-promo-products"><img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/searchpromoproductsbutton.png" /></a>
 			</li>
 			<li>
-				<a href="http://marketing-candy.com/online-software-demo/"><img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/onlinesolutiondemo.png" /></a>
+				<a href="http://marketing-candy.com/online-software-demo/"><img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/onlinesolutiondemo.png" /></a>
 			</li>
 			<li>
-				<a href="http://marketing-candy.com/news-events/candy-show-cases/"><img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/showcasersvpbutton.png" /></a>
+				<a href="http://marketing-candy.com/news-events/candy-show-cases/"><img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/showcasersvpbutton.png" /></a>
 			</li>
 			<li>
-				<a href="http://marketing-candy.com/request-a-quote/"><img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/requestaquotebutton.png" /></a>
+				<a href="http://marketing-candy.com/request-a-quote/"><img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/requestaquotebutton.png" /></a>
 			</li>
 		</ul>
 		<h1 id="welcome">Welcome to the Marketing Candy client portal</h1>
 		<form id="login" action="login.asp" method="post" name="login">
 			<div id="login-image">
-				<img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/clientlogin.png" />
+				<img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/clientlogin.png" />
 			</div>
 			<div id="fields">
 				<p>
@@ -53,11 +71,14 @@
 					<input id="password" name="password" type="password" value="" />
 				</p>
 				<p>
-					<input id="submit1" name="submit1" type="submit" value="Login" onclick="if ((user.value === '') && (password.value === '')){ return false; }" />
+					<input id="submit1" name="submit1" type="submit" value="Login" />
+				</p>
+				<p>
+					<a href="#" id="forgot-your-password">Forgot your password?</a>
 				</p>
 			</div>
 		</form>
-		<img src="http://host.onlineprintsolutions.com/rosegroup/Files/BrokerBranding/mc/Include/horizontalfade.png" />
+		<img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/horizontalfade.png" />
 	</div>
 </body>
 </html>
