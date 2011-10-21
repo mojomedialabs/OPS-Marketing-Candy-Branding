@@ -22,10 +22,22 @@
 			$("#forgot-your-password").click(function(event) {
 				event.preventDefault();
 
-				var newWindow = window.open("forgottenpassword.asp", "", "width=600,height=400,toolbar=0,status=0,location=0,menubar=0,scrollbar=1,resizable=1");
+				var newWindow = window.open("forgottenpassword.asp", "", "width=600,height=400,location=0,menubar=0,resizable=1,scrollbar=1,status=0,toolbar=0");
 
 				newWindow.focus();
 			});
+
+			if (document.location.href === document.referrer) {
+				$("#error-logging-in").show().fadeOut(7500);
+
+				$("#error-logging-in").mouseover(function() {
+					$(this).stop().css({ opacity: 1.0 });
+				});
+
+				$("#error-logging-in").mouseout(function() {
+					$(this).fadeOut(4000);
+				});
+			}
 		});
 	</script>
 </head>
@@ -79,6 +91,14 @@
 			</div>
 		</form>
 		<img src="http://host.onlineprintsolutions.com/rosegroup/files/brokerbranding/mc/include/horizontalfade.png" />
+	</div>
+	<div id="error-logging-in">
+		<div id="error-logging-in-header">
+			Error logging in!
+		</div>
+		<div id="error-logging-in-body">
+			Your user name or password is incorrect!
+		</div>
 	</div>
 </body>
 </html>
