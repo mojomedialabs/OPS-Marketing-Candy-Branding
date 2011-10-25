@@ -226,6 +226,31 @@ footer {
 
 /* End Footer */
 
+/* Begin Landing */
+
+#main.landing a, #main.landing a:visited {
+	color: #00a0ce;
+	text-decoration: none;
+}
+
+#main.landing a:hover, #main.landing a:focus {
+	color: #3ac0e7;
+	outline: none;
+	text-decoration: underline;
+}
+
+#main.landing a:active {
+	color: #006886;
+}
+
+#main.landing h1 {
+	text-align: left;
+}
+
+#main.landing p {
+	font-size: 16px;
+}
+
 /* Begin Registration */
 
 .registration-field-row {
@@ -608,6 +633,10 @@ select[name="DeliveryAddress"] {
 /* End Cart */
 
 /* Begin Checkout */
+
+.Hide {
+	display: none;
+}
 
 #delivery-details {
 	margin-bottom: 20px;
