@@ -1,6 +1,9 @@
 @charset "utf-8";
 
-@font-face { font-family: BebasNeue; src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf"); }
+@font-face {
+	font-family: BebasNeue;
+	src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf");
+}
 
 html {
 	height: 100%;

@@ -1,6 +1,27 @@
 @charset: "utf-8";
 
-@font-face { font-family: BebasNeue; src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf"); }
+@font-face {
+	font-family: BebasNeue;
+	src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf");
+}
+
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Lora'), url('http://themes.googleusercontent.com/static/fonts/lora/v4/nAKwuw6_dIh5kwvpj3ShNfesZW2xOQ-xsNqO47m55DA.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: normal;
+	src: local('Lora Italic'), local('Lora-Italic'), url('http://themes.googleusercontent.com/static/fonts/lora/v4/9imnXKme9i4It2hFQOvfvevvDin1pK8aKteLpeZ5c0A.woff') format('woff');
+}
+
+em {
+	font-style: italic;
+}
 
 html {
 	height: 100%;
@@ -224,9 +245,72 @@ footer {
 	width: 958px;
 }
 
+footer p {
+	color: #aaaaaa;
+	font-size: 9px;
+	text-align: center;
+}
+
+footer p a {
+	color: #aaaaaa !important;
+}
+
 /* End Footer */
 
+/* Begin Message */
+
+#message {
+	background: #f7f7f7;
+	border: 1px solid #bab9b9;
+	display: none;
+	left: 5px;
+	min-height: 16px;
+	position: absolute;
+	padding: 10px 15px 10px 62px;
+	text-align: left;
+	top: 5px;
+	width: 300px;
+	z-index: 10;
+}
+
+#message-header {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#message.attention {
+	background: #ffdb91 url("attention.png") no-repeat 15px center;
+	border: 1px solid #ffc44a;
+}
+
+#message.success {
+	background: #e2ff7d url("success.png") no-repeat 15px center;
+	border: 1px solid #99c600;
+}
+
+#message.error {
+	background: #f5b5a9 url("error.png") no-repeat 15px center;
+	border: 1px solid #eb5339;
+}
+
+#message.information {
+	background: #b3cfea url("information.png") no-repeat 15px center;
+	border: 1px solid #418acc;
+}
+
+#message.lightbulb {
+	background: #feefcb url("lightbulb.png") no-repeat 15px center;
+	border: 1px solid #d3a350;
+}
+
+/* End Message */
+
 /* Begin Landing */
+
+#main.landing {
+	margin-left: 60px;
+	width: 730px;
+}
 
 #main.landing a, #main.landing a:visited {
 	color: #00a0ce;
@@ -243,13 +327,39 @@ footer {
 	color: #006886;
 }
 
-#main.landing h1 {
-	text-align: left;
+#main.landing p {
+	font-family: Arial;
+	font-size: 15px;
+	line-height: 23px;
 }
 
-#main.landing p {
-	font-size: 16px;
+#welcome {
+	overflow: hidden;
 }
+
+#welcome h1 {
+	color: #009fce;
+	float: left;
+	font-family: Lora;
+	font-size: 28px;
+	font-style: italic;
+	font-weight: 200;
+	text-align: left;
+	width: 480px;
+}
+
+#welcome h1 .huge {
+	font-style: normal;
+	font-size: 50px;
+}
+
+#welcome #candy-cart {
+	float: left;
+	left: -100px;
+	position: relative;
+}
+
+/* End Landing */
 
 /* Begin Registration */
 
@@ -375,6 +485,10 @@ footer {
 	overflow: hidden;
 }
 
+.extras-headers {
+	display: none;
+}
+
 .product {
 	/*float: left;*/
 	margin: 10px;
@@ -442,6 +556,25 @@ footer {
 	width: 129px;
 }
 
+.product-extras {
+	float: left;
+	margin-top: 30px;
+}
+
+.product-extras input[type="text"] {
+	border: 1px solid;
+	font-size: 14px;
+	width: 29px;
+}
+
+.product-extra-field {
+	float: left;
+}
+
+.product-extra-field label {
+	margin: 0 5px;
+}
+
 .product-favorite {
 	float: left;
 	margin-left: 5px;
@@ -471,6 +604,7 @@ footer {
 .product-category-thumbnail {
 	border: 1px solid #86d5ed;
 	height: 200px;
+	line-height: 200px;
 	margin-bottom: 10px;
 	padding: 5px;
 	text-align: center;
@@ -478,6 +612,7 @@ footer {
 
 .product-category-thumbnail img {
 	max-height: 200px;
+	vertical-align: middle;
 }
 
 .product-category-name {
@@ -631,6 +766,34 @@ select[name="DeliveryAddress"] {
 }
 
 /* End Cart */
+
+/* Begin Order Proof */
+
+.order-proof {
+	overflow: hidden;
+}
+
+#order-proof-thumbnail {
+	float: left;
+	width: 50%;
+}
+
+#order-proof-details {
+	float: right;
+	width: 50%;
+}
+
+#order-proof-thumbnail-front, #order-proof-thumbnail-back {
+    margin: 0 10px 10px 0;
+    text-align: center;
+	width: 350px;
+}
+
+#order-proof-thumbnail-front img, #order-proof-thumbnail-back img {
+	max-height: 300px;
+}
+
+/* End Order Proof */
 
 /* Begin Checkout */
 

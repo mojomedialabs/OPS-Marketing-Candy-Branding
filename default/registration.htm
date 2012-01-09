@@ -1,5 +1,5 @@
 	<script type="text/javascript" src="Include/highslide.js"></script>
-	<script type="text/javascript" src="Include/highslide.cfg.js"></script>	
+	<script type="text/javascript" src="Include/highslide.cfg.js"></script>
 	<script src="include/ajax.js"></script>
 	<script language="javascript" type="text/javascript">
 		function setImage(strField, strLibraryImageId, strFile)
@@ -55,13 +55,13 @@
 						document['CheckUserImg'].src='images/RegoYes.jpg';
 					}
 				}
-			}	
+			}
 		}
 		function OpenWin(strURL)
 		{
 			var winCurrent
 			winCurrent = window.open(strURL, "", "width=600,height=400,toolbar=0,status=0,location=0,menubar=0,scrollbars=1,resizable=1");
-			winCurrent.focus(); 
+			winCurrent.focus();
 		}
 
 function setup()
@@ -73,21 +73,21 @@ function setup()
 
 	{   var i;
 		var whitespace = " \t\n\r";
-		
+
 		if (isEmpty(strCurrent)) return true;
 
 		for (i = 0; i < strCurrent.length; i++)
-		{   
+		{
 			var c = strCurrent.charAt(i);
 
 			if (whitespace.indexOf(c) == -1) return false;
 		}
-		
+
 		return true;
 	}
 
 	function isEmpty(strCurrent)
-	{  
+	{
 		return ((strCurrent == null) || (strCurrent.length == 0))
 	}
 
@@ -95,7 +95,7 @@ function setup()
 	function ValidData()
 	{
 
-		if (CheckEntry('CostCentre', '{CostCentreCaption}', true, 0, '') == false) return false;	
+		if (CheckEntry('CostCentre', '{CostCentreCaption}', true, 0, '') == false) return false;
 		if (CheckEntry('FName', '{NameFirstNameCaption}', true, 20, 'max') == false) return false;
 		if (CheckEntry('SName', '{NameSurnameCaption}', true, 20, 'max') == false) return false;
 
@@ -129,7 +129,7 @@ function setup()
 		if (CheckEntry('Postcode', 'Zip/Postcode', true, 50, 'max') == false) return false;
 	<!--/AddressJS-->
 		EnableFields();
-		
+
 		return true;
 	}
 
@@ -145,7 +145,7 @@ function setup()
 			if (objElements[i].disabled){objElements[i].value = "";}
 			objElements[i].disabled = false;
 		}
-		
+
 		objElements = document.getElementsByTagName("select");
 		for (i=0;i<objElements.length;i++)
 		{
@@ -164,12 +164,12 @@ function setup()
 			document.Form1.elements[ctrlCur].focus();
 			return false;
 		}
-		
+
 		if (strLength != '')
 		{
-			
+
 			var intLen = parseInt(strLength);
-			
+
 			if ((document.Form1.elements[ctrlCur].value.length != intLen) && (strLengthType=='exact'))
 			{
 				if ((blnRequired == false) && (document.Form1.elements[ctrlCur].value.length==0))return true;
@@ -183,7 +183,7 @@ function setup()
 				return false;
 			}
 		}
-			
+
 		return true;
 	}
 
@@ -221,19 +221,19 @@ function setup()
 	}
 
 
-	function stateChanged() 
-	{ 
+	function stateChanged()
+	{
 		var teUser = document.getElementById("User");
 		var tePassword = document.getElementById("Password");
 
 		if (xmlHttp.readyState==4)
-		{ 
+		{
 			//document.getElementById("loginmsgs").innerHTML=xmlHttp.responseText;
 			if (xmlHttp.responseText == "0")
 			{
 				//window.location = "cart.asp?u=" + teUser.value + "&p=" + tePassword.value;
 				window.location = "{successreturnurl}";
-			} 
+			}
 			else
 			{
 				document.getElementById("loginmsgs").innerHTML = "<font color=red>Username/Password entered was incorrect</font>";
@@ -249,15 +249,15 @@ function setup()
 		var children;
 		var i;
 		var strGNList=document.getElementById('EIFGroupNameList').value;
-		
+
 		if(strVal == '')
 		{
-			for (i=0;i<document.Form1.eifgroup.length;i++) 
+			for (i=0;i<document.Form1.eifgroup.length;i++)
 			{
-				  if (document.Form1.eifgroup[i].checked) 
-				  { 
-						 strVal = document.Form1.eifgroup[i].value; 
-				  } 
+				  if (document.Form1.eifgroup[i].checked)
+				  {
+						 strVal = document.Form1.eifgroup[i].value;
+				  }
 			}
 			if (strVal == '')
 			{
@@ -285,9 +285,9 @@ function setup()
 				setOpacity(50, children[i]);
 			}
 		}
-		
-		
-		
+
+
+
 		children = document.getElementById('div' + strVal).getElementsByTagName('*');
 		for (i=0;i<children.length;i++)
 		{
@@ -301,13 +301,13 @@ function setup()
 		// IE/Win
 		objObject.style.filter = "alpha(opacity:"+opacity+")";
 		objObject.style.zoom = 1;
-		
+
 		// Safari<1.2, Konqueror
 		objObject.style.KHTMLOpacity = opacity/100;
-	  
+
 		// Older Mozilla and Firefox
 		objObject.style.MozOpacity = opacity/100;
-	  
+
 		// Safari 1.2, newer Firefox and Mozilla, CSS3
 		objObject.style.opacity = opacity/100;
 	}
@@ -340,11 +340,11 @@ function setup()
                       <td valign="top" colspan="2">
 
                         <form>
-                        <TABLE border="0" CLASS=bordertable cellpadding="0" cellspacing="0">                    
+                        <TABLE border="0" CLASS=bordertable cellpadding="0" cellspacing="0">
                           <tr><td class=bordertableheader>Already a registered user?</td></tr>
                           <tr>
                             <td>
-                              <TABLE border="0" CLASS=grouptable cellpadding="0" cellspacing="0">   
+                              <TABLE border="0" CLASS=grouptable cellpadding="0" cellspacing="0">
                                 <tr><td width="120" valign="bottom">Username</td><td valign="bottom">Password</td></tr>
                                 <tr>
                                   <td width="120" valign="top"><input type=text size=15 name=user id=User></td>
@@ -363,7 +363,7 @@ function setup()
 						 <!--Redirect-->
                         </form><br>
 						<form name="Form1" method="Post" onSubmit="return ValidData()">
-                        <TABLE border="0" CLASS=bordertable>                    
+                        <TABLE border="0" CLASS=bordertable>
                           <tr>
                             <td colspan=2 class=bordertableheader>Registration Details</td>
                           </tr>
@@ -532,7 +532,7 @@ function setup()
 						<input type=hidden id="EIFGroupNameList" value="{EIFGroupNameList}">
                       </td>
                     </tr>
-               	            
+
 
 
 
@@ -556,8 +556,8 @@ function setup()
                           </tr>
                         </table>
                       </td>
-                    </tr>                                                 	              
+                    </tr>
                   </table>
 				</td>
-			</tr>                                                 	              
+			</tr>
 		</table>

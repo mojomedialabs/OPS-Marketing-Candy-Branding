@@ -195,7 +195,7 @@ function CheckApproverEmail() {
 	var strDisplay = '';
 
 	if (strValue.length > 0) {
-		if (strValue.charAt(0) != '@') strDisplay = 'none'
+		if (strValue.charAt(0) != '@') strDisplay = 'none';
 	}
 
 	document.Form1.elements['preapproval'].style.display = strDisplay;
@@ -206,7 +206,7 @@ function hasApproverEmail() {
 	var strEmail = '';
 
 	if (document.getElementById('preapproval') != null) {
-		blnCheckEmail = true
+		blnCheckEmail = true;
 		strEmail = document.getElementById('preapproval').value;
 	}
 
@@ -217,7 +217,6 @@ function hasApproverEmail() {
 		}
 
 		strEmail += document.getElementById('preapprovalselect').value;
-
 	}
 
 	if (blnCheckEmail) {
@@ -225,7 +224,6 @@ function hasApproverEmail() {
 			alert('Please enter an approver\'s email address');
 			return false
 		}
-
 	}
 
 	return true;
@@ -540,7 +538,7 @@ function functionOnLoad() {
 		<!--PONumber-->
 		<div id="ponumberbox">
 			<label for="PONumber">PO Number</label>
-			<input type="text" name="PONumber" id="PONumber" value="{PONumber}" />
+			<input type="text" name="PONumber" id="PONumber" value="{PONumber}" style="border: 1px #cacaca solid;" />
 		</div>
 		<!--/PONumber-->
 		<!--PreApproval-->
@@ -588,6 +586,7 @@ function functionOnLoad() {
 	<input type="submit" value="Submit Order >>" id=btnFinal name=btnFinal onClick="return CheckLiveStock();" style='display:{orderdisplay}'>
 	<!--/OrderButton-->
 </form>
+<p style="margin-top: 10px;">Pricing is based on when this product had originally been purchased.  Pricing may have changed from the original purchase date.  If there is a discrepancy, you will be notified prior to the order proceeding.</p>
 <script>
 $("tr.Hide").remove();
 

@@ -4,6 +4,8 @@
 <!--ExtraJavaScript-->
 
 function CheckOptions() {
+	$(".product-quantity input[type='text']").attr("disabled", false);
+
 	return HasSelected(document.Form1.elements['template'], 'Product');
 }
 
@@ -49,7 +51,6 @@ function HasSelected(ctrlRadio, strCaption) {
 }
 
 function CheckExtraFields(ProductId) {
-	<!--CheckProductFields-->
 	return true;
 }
 
@@ -364,8 +365,7 @@ function download(objThis, strTId) {
 function functionOnLoad() {
 	return SetupBoxes();
 }
-</script>
-<script>
+
 function getUrlParams() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -378,6 +378,30 @@ function getUrlParams() {
     return vars;
 }
 
+$.fn.forceInteger = function() {
+	return this.each(function() {
+		$(this).keydown(function(event) {
+			var key = event.which || event.keyCode;
+
+			if (!(!event.shiftKey && !event.altKey && !event.ctrlKey &&
+				//numbers
+				((key >= 48 && key <= 57) ||
+				//numeric keypad
+				(key >= 96 && key <= 105) ||
+				//backspace, tab, and enter
+				key === 8 || key === 9 || key === 13 ||
+				//home and end
+				key === 35 || key === 36 ||
+				//left and right arrows
+				key === 37 || key === 39 ||
+				//delete and insert
+				key === 46 || key === 45))) {
+				event.preventDefault();
+			}
+		});
+	});
+};
+
 $(function() {
 	$(".product-thumbnail img").attr("width", "");
 
@@ -386,6 +410,98 @@ $(function() {
 	if ($(".product").length !== 0) {
 		$("#product-categories").remove();
 	}
+
+	$("#favorites img").remove();
+
+	if ($(".extras-headers").text() !== "") {
+		$(".product-quantity input[type='text']").attr("disabled", true);
+
+		var extraFieldHeaders = $(".extras-headers").text().split(";");
+
+		$(".product-extras input[type='text']").each(function(index) {
+			$(this).wrap("<div class='product-extra-field' />");
+
+			$(this).before("<label for='" + $(this).attr("name") + "'>" + extraFieldHeaders[index] + "</label>");
+		});
+
+		$(".product-extra-field input[type='text']").forceInteger();
+
+		$(".product-extra-field input[type='text']").keyup(function() {
+			var totalQuantity = 0;
+
+			$(".product-extra-field input[type='text']").each(function() {
+				var quantity = parseInt($(this).val(), 10)
+
+				if (isNaN(quantity)) {
+					quantity = 0;
+				}
+
+				totalQuantity += quantity;
+			});
+
+			$(".product-quantity input[type='text']").val(totalQuantity.toString());
+		});
+	}
+
+	$("#btnCartContinueBottom").click(function(event) {
+		var minimumQuantity = $(".product-minimum-quantity").text();
+
+		minimumQuantity = parseInt(minimumQuantity.substr(minimumQuantity.indexOf(": ") + 2), 10);
+
+		if ($(".product-quantity input[type='text']").val() === "") {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+
+		var quantity = parseInt($(".product-quantity input[type='text']").val(), 10);
+
+		if (quantity < minimumQuantity) {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+	});
+
+	$("#btnCartBottom").click(function(event) {
+		var minimumQuantity = $(".product-minimum-quantity").text();
+
+		minimumQuantity = parseInt(minimumQuantity.substr(minimumQuantity.indexOf(": ") + 2), 10);
+
+		if ($(".product-quantity input[type='text']").val() === "") {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+
+		var quantity = parseInt($(".product-quantity input[type='text']").val(), 10);
+
+		if (quantity < minimumQuantity) {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+	});
+
+	$("#Form1").submit(function(event) {
+		var minimumQuantity = $(".product-minimum-quantity").text();
+
+		var minimumQuantity = parseInt(minimumQuantity.substr(minimumQuantity.indexOf(": ") + 2), 10);
+
+		if ($(".product-quantity input[type='text']").val() === "") {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+
+		var quantity = parseInt($(".product-quantity input[type='text']").val(), 10);
+
+		if (quantity < minimumQuantity) {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+	});
 });
 </script>
 <div id="added-to-cart">
@@ -413,6 +529,7 @@ $(function() {
 	</div>
 	<!--/ADDCART-->
 	<div id="products">
+		<div class="extras-headers"><!--ExtraHeader--></div>
 		<!--ProductStyle-->
 		<script>
 			if (getUrlParams()["itemsadded"] == "1") {
@@ -442,6 +559,9 @@ $(function() {
 				{desc}
 				<!--/Description-->
 			</div>
+			<div class="product-extras">
+				{extras}
+			</div>
 			<div class="product-actions">
 				<div class="product-checkbox">
 					<!--ProductCheckBox-->
@@ -451,6 +571,7 @@ $(function() {
 				<div class="product-quantity">
 					<label for="qty{templateid}">Qty {quantity}</label>
 				</div>
+
 				<div class="products-add-to-cart">
 					<input type="submit" name="btnCartContinue" id="btnCartContinueBottom" value="Add to Cart" />
 					<input type="submit" name="btnCart" id="btnCartBottom" value="Add to Cart and Checkout" />
@@ -466,6 +587,7 @@ $(function() {
 	</div>
 	<!--/Products-->
 	<!--CATEGORIES-->
+	<div id="favorites">{Favorites}</div>
 	<div id="product-categories">
 		<!--menuitem-->
 		<div class="product-category">
