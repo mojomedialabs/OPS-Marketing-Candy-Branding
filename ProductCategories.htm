@@ -403,7 +403,7 @@ $.fn.forceInteger = function() {
 };
 
 $(function() {
-	$(".product-thumbnail img").attr("width", "");
+	$(".product-thumbnail img").removeAttr("width");
 
 	$(".product-actions input[type='checkbox']").attr("checked", true);
 
