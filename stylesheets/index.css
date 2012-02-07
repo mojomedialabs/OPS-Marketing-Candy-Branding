@@ -2,21 +2,49 @@
 
 @font-face {
 	font-family: BebasNeue;
-	src: url("http://marketing-candy.com/wp-includes/BebasNeue.otf");
+	src: url("http://marketing-candy.com/wp-includes/BebasNeue.eot");
+	src: url("http://marketing-candy.com/wp-includes/BebasNeue.eot#iefix") format("embedded-opentype"),
+		 url("http://marketing-candy.com/wp-includes/BebasNeue.woff") format("woff"),
+		 url("http://marketing-candy.com/wp-includes/BebasNeue.ttf") format("truetype"),
+		 url("http://marketing-candy.com/wp-includes/BebasNeue.svg#BebasNeue") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
-@font-face {
+/*@font-face {
 	font-family: 'Lora';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Lora'), url('http://themes.googleusercontent.com/static/fonts/lora/v4/nAKwuw6_dIh5kwvpj3ShNfesZW2xOQ-xsNqO47m55DA.woff') format('woff');
-}
+}*/
 
 @font-face {
+	font-family: Lora;
+	src: url("http://marketing-candy.com/wp-includes/Lora.eot");
+	src: url("http://marketing-candy.com/wp-includes/Lora.eot#iefix") format("embedded-opentype"),
+		 url("http://marketing-candy.com/wp-includes/Lora.woff") format("woff"),
+		 url("http://marketing-candy.com/wp-includes/Lora.ttf") format("truetype"),
+		 url("http://marketing-candy.com/wp-includes/Lora.svg#Lora") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*@font-face {
 	font-family: 'Lora';
 	font-style: italic;
 	font-weight: normal;
 	src: local('Lora Italic'), local('Lora-Italic'), url('http://themes.googleusercontent.com/static/fonts/lora/v4/9imnXKme9i4It2hFQOvfvevvDin1pK8aKteLpeZ5c0A.woff') format('woff');
+}*/
+
+@font-face {
+	font-family: Lora;
+	src: url("http://marketing-candy.com/wp-includes/LoraItalic.eot");
+	src: url("http://marketing-candy.com/wp-includes/LoraItalic.eot#iefix") format("embedded-opentype"),
+		 url("http://marketing-candy.com/wp-includes/LoraItalic.woff") format("woff"),
+		 url("http://marketing-candy.com/wp-includes/LoraItalic.ttf") format("truetype"),
+		 url("http://marketing-candy.com/wp-includes/LoraItalic.svg#LoraItalic") format("svg");
+	font-weight: normal;
+	font-style: italic;
 }
 
 em {
@@ -616,6 +644,7 @@ footer p a {
 }
 
 .product-category-name {
+	height: 25px;
 	text-align: center;
 }
 
