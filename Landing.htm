@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>{Title}</title>
-	<meta name="description" content="{metadescription}" />
-	<meta name="keywords" content="{metakeywords}" />
+	<meta name="description" content="Marketing Candy Pro Store" />
 	<meta name="author" content="Mojo Media Labs" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="include/reset.css" media="screen" rel="stylesheet" type="text/css">
 	<link href="include/index.css" media="screen" rel="stylesheet" type="text/css">
-	<script src="include/modernizr.js"></script>
-	<script src="include/jquery164min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="include/jquery171min.js"></script>
+	<script src="include/index.js"></script>
 </head>
 <body>
 	<div id="content">
-		<header>
+		<header id="main-header">
 			<div id="logo">
-				<a href="http://marketing-candy.com/"><img src="include/logo.png" /></a>
+				<a href="http://marketingcandystore.com/"><img src="include/logo.png" alt="Marketing Candy Logo" /></a>
 			</div>
 			<nav id="main-nav">
 				<ul>
 					<li><a href="index.asp">Home</a></li>
 					<li><a href="productcats.asp">Products</a></li>
-					<li><a href="orders.asp">Orders</a></li>
+					<li><a href="orders.asp">Order History</a></li>
 					<li><a href="cart.asp">Shopping Cart</a></li>
-					<li><a href="page.asp?name=Learn+More+About+Pro+Stores">Reports</a></li>
+					<!--APPROVE--><li><a href="approve.asp">Approve</a></li><!--/APPROVE-->
+					<li><a href="reports.asp">Reports</a></li>
 					<li><a href="login.asp">Logout</a></li>
 				</ul>
 			</nav>

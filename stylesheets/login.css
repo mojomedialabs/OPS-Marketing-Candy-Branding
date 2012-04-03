@@ -121,6 +121,7 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#afe1f4', EndColorStr='#00aedb'); /* IE6–IE9 */
 	color: #591f00;
 	float: right;
+	height: 212px;
 	margin: 0 35px;
 	width: 573px;
 }
@@ -133,6 +134,10 @@ body {
 #fields {
 	float: right;
 	margin-right: 30px;
+}
+
+#fields p {
+	margin-top: 10px;
 }
 
 label {
